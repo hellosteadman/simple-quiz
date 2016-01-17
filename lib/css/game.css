@@ -1,0 +1,268 @@
+body {
+    background: url('../../assets/img/background.jpg');
+    background-size: cover;
+    margin: 0; padding: 0;
+    overflow: hidden;
+}
+
+body * {
+    -webkit-user-select: none;
+    cursor: default;
+}
+
+header {
+    width: 100%;
+    height: 44px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+}
+
+header .title {
+    font-family: 'Covered By Your Grace', cursive;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 24px;
+    float: left;
+    width: 50%;
+}
+
+header .lives {
+    float: right;
+    margin-left: 10px;
+}
+
+header .life {
+    color: #000;
+}
+
+header .life.active {
+    color: #fff;
+}
+
+header .score {
+    float: right;
+    display: block;
+    line-height: 24px;
+    font-size: 24px;
+    font-family: 'Autour One', cursive;
+    text-transform: uppercase;
+}
+
+header .score .label {
+    font-size: 16px;
+}
+
+footer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background: url('../../assets/img/left.png') no-repeat;
+    background-size: cover;
+    z-index: 1000;
+}
+
+#logo {
+    position: absolute;
+    z-index: 2000;
+    top: 50%;
+    left: 0;
+    cursor: pointer;
+    width: 73px;
+    height: 73px;
+    display: block;
+}
+
+#cards {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+
+.inner {
+    padding: 10px;
+}
+
+.card {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6 { margin: 0; }
+
+.intro {
+    background-image: url('../../assets/img/intro.png');
+}
+
+.intro h1 {
+    position: absolute;
+    bottom: 70px; right: 10px;
+    text-align: right;
+    font-family: 'Covered By Your Grace', cursive;
+    font-weight: normal;
+    opacity: 0.5;
+}
+
+.intro a.go {
+    padding: 10px;
+    background: rgba(0, 100, 0, 0.75);
+    display: block; float: right;
+    color: #fff;
+    text-decoration: none;
+    transition: background .5s;
+    position: absolute;
+    bottom: 10px; right: 10px;
+    cursor: pointer;
+    font-family: 'Autour One', cursive;
+    text-transform: uppercase;
+}
+
+.intro a.go:hover {
+    background: rgb(0, 100, 0);
+}
+
+.question h2, .question ul {
+    margin-left: 25%;
+}
+
+.question h2 {
+    position: absolute;
+    bottom: 180px;
+    right: 10px;
+    text-align: right;
+    width: 50%;
+    font-family: 'Covered By Your Grace', cursive;
+    font-weight: normal;
+    text-shadow: 1px 0 6px #D4C9AC;
+}
+
+.question-1 h2, .question-9 h2, .question-10 h2 {
+    color: #fff;
+    text-shadow: 1px 0 6px #000;
+}
+
+ul.answers {
+    padding: 0;
+    list-style-type: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 75%;
+}
+
+ul.answers li {
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+ul.answers a {
+    padding: 10px;
+    background: rgba(33, 63, 70, 0.75);
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    transition: background .5s;
+    cursor: pointer;
+    font-family: 'Autour One', cursive;
+    text-transform: uppercase;
+}
+
+ul.answers a:hover {
+    background: rgb(33, 63, 70);
+}
+
+ul.answers a.correct {
+    background: #090;
+}
+
+ul.answers a.incorrect {
+    background: #900;
+}
+
+.end {
+    background-image: url('../../assets/img/end.png');
+}
+
+.end h2 {
+    margin-top: 64px;
+    margin-left: 25%;
+    width: 75%;
+    text-align: center;
+    font-family: 'Covered By Your Grace', cursive;
+    font-weight: normal;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+}
+
+.end .row {
+    margin-top: 20px;
+    margin-left: 25%;
+    width: 70%;
+    float: left;
+    clear: both;
+}
+
+.end .row .col {
+    width: 50%;
+    float: left;
+
+    font-size: 24px;
+    font-family: 'Autour One', cursive;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.end .row .col.correct {
+    background: rgba(0, 100, 0, 0.5);
+    text-align: right;
+}
+
+.end .row .col.incorrect {
+    background: rgba(100, 0, 0, 0.5);
+}
+
+.end .row .col .label {
+    font-size: 16px;
+    display: block;
+}
+
+.end .row .col.twitter, .end .row .col.facebook {
+    font-family: 'Covered By Your Grace', cursive;
+    font-weight: normal;
+    line-height: 24px;
+}
+
+.end .row .col.twitter a, .end .row .col.facebook a {
+    color: #fff;
+    text-decoration: none;
+    margin: 10px;
+    display: block;
+    cursor: pointer;
+}
+
+.end .row .col.twitter {
+    background: #4099ff;
+}
+
+.end .row .col.twitter a {
+    padding-left: 50px;
+    background: url('../../assets/img/twitter.png') no-repeat left;
+}
+
+.end .row .col.facebook {
+    background: #3B5998;
+    text-align: right;
+}
+
+.end .row .col.facebook a {
+    padding-right: 50px;
+    background: url('../../assets/img/facebook.png') no-repeat right;
+}

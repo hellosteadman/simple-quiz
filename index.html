@@ -1,0 +1,121 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="lib/css/normalise.css" />
+        <link rel="stylesheet" href="lib/css/animate.css" />
+        <link rel="stylesheet" href="lib/css/game.css" />
+        <link href="//fonts.googleapis.com/css?family=Covered+By+Your+Grace" rel="stylesheet" />
+        <link href="//fonts.googleapis.com/css?family=Autour+One" rel="stylesheet" />
+
+        <title>Trivia Detective</title>
+        <script src="lib/js/jquery.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="inner">
+                <div class="title"></div>
+
+                <div class="col lives">
+                    <span class="life active">&#9733;</span>
+                    <span class="life active">&#9733;</span>
+                    <span class="life active">&#9733;</span>
+                </div>
+
+                <div class="col score">
+                    <span class="label">Score</span>
+                    <span class="points">0</span>
+                </div>
+            </div>
+        </header>
+
+        <div id="cards">
+            <div class="intro card animated" data-out="fadeOut">
+                <div class="inner">
+                    <h1>How&rsquo;s your True Detective knowledge?</h1>
+                    <a class="go">Put it to the test</a>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/html" data-template="question">
+            <div class="question card animated" data-in="fadeIn" data-out="fadeOut">
+                <div class="inner">
+                    <h2>{{ question.prompt }}</h2>
+                    <ul class="answers" data-correct="{{ question.correct }}">
+                        {% for answer in question.answers %}
+                            <li data-index="{{ answer.index }}">
+                                <a href="#">{{ answer.text }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </script>
+
+        <script type="text/html" data-template="end">
+            <div class="end card animated" data-in="fadeIn">
+                <h2>{{ judgement.third }}</h2>
+                <div class="row">
+                    <div class="col correct">
+                        <div class="inner">
+                            <span class="label">Right</span>
+                            <span class="value">{{ correct }}</span>
+                        </div>
+                    </div>
+
+                    <div class="col incorrect">
+                        <div class="inner">
+                            <span class="label">Wrong</span>
+                            <span class="value">{{ incorrect }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col twitter">
+                        <a href="#" data-judgement="I scored {{ points }} in {{ title }}. {{ judgement.self }}">Post your score to Twitter</a>
+                    </div>
+
+                    <div class="col facebook">
+                        <a href="#" data-judgement="I scored {{ points }} in {{ title }}. {{ judgement.self }} How will you score?">Post your score to Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+        <div id="fb-root"></div>
+        <footer></footer>
+        <a id="logo" href="https://poddle.io/seed/" target="_blank"><img src="assets/img/poddle.png" /></a>
+        <script src="lib/js/plunja.js"></script>
+        <script src="lib/js/game.js"></script>
+
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init(
+                    {
+                        appId: game.facebook_id,
+                        status: true,
+                        xfbml: true
+                    }
+                );
+            };
+
+            (
+                function(d, s, id){
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/en_US/all.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(
+                    document, 'script', 'facebook-jssdk'
+                )
+            );
+        </script>
+
+        <script src="lib/js/data.js"></script>
+        <script src="lib/js/ui.js"></script>
+        <script src="lib/js/soundmanager.js"></script>
+    </body>
+</html>
